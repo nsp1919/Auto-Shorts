@@ -1,0 +1,77 @@
+--- START PROCESSING f36f3a0b-b611-4ccd-9551-8428368c9ded ---
+Audio extracted: processed\f36f3a0b-b611-4ccd-9551-8428368c9ded.mp3
+Starting transcription for processed\f36f3a0b-b611-4ccd-9551-8428368c9ded.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\f36f3a0b-b611-4ccd-9551-8428368c9ded_transcript.json
+Using heuristic fallback.
+--- START PROCESSING 6a3375e7-0a5f-41f8-9998-12f2412b1ebb ---
+Audio extracted: processed\6a3375e7-0a5f-41f8-9998-12f2412b1ebb.mp3
+Starting transcription for processed\6a3375e7-0a5f-41f8-9998-12f2412b1ebb.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\6a3375e7-0a5f-41f8-9998-12f2412b1ebb_transcript.json
+Using heuristic fallback.
+--- START PROCESSING 365a1766-b712-4b78-a069-cbfbef33d8ec ---
+Audio extraction failed: Command '['C:\\Users\\nsp19\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffmpeg.EXE', '-i', 'uploads\\365a1766-b712-4b78-a069-cbfbef33d8ec.mp4', '-q:a', '0', '-map', 'a', 'processed\\365a1766-b712-4b78-a069-cbfbef33d8ec.mp3', '-y']' returned non-zero exit status 3199971767.
+--- START PROCESSING 3b9d12ef-016c-46f3-b9eb-8b38e0bf50d2 ---
+Audio extracted: processed\3b9d12ef-016c-46f3-b9eb-8b38e0bf50d2.mp3
+Starting transcription for processed\3b9d12ef-016c-46f3-b9eb-8b38e0bf50d2.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\3b9d12ef-016c-46f3-b9eb-8b38e0bf50d2_transcript.json
+Using heuristic fallback.
+--- START PROCESSING c996a23c-2ecf-4320-9702-4d3fcf6f6548 ---
+Audio extracted: processed\c996a23c-2ecf-4320-9702-4d3fcf6f6548.mp3
+Starting transcription for processed\c996a23c-2ecf-4320-9702-4d3fcf6f6548.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\c996a23c-2ecf-4320-9702-4d3fcf6f6548_transcript.json
+Using heuristic fallback.
+--- START PROCESSING acc94973-0414-41cd-b3ed-f9b0f0a74369 ---
+Audio extracted: processed\acc94973-0414-41cd-b3ed-f9b0f0a74369.mp3
+Starting transcription for processed\acc94973-0414-41cd-b3ed-f9b0f0a74369.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\acc94973-0414-41cd-b3ed-f9b0f0a74369_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 72.2466215-102.2466215
+Generating SRT to processed\acc94973-0414-41cd-b3ed-f9b0f0a74369_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\acc94973-0414-41cd-b3ed-f9b0f0a74369_short_1.srt)
+--- START PROCESSING 10f45926-0cf0-436e-883f-18b7c7228df3 ---
+Audio extracted: processed\10f45926-0cf0-436e-883f-18b7c7228df3.mp3
+Starting transcription for processed\10f45926-0cf0-436e-883f-18b7c7228df3.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\10f45926-0cf0-436e-883f-18b7c7228df3_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 72.2466215-102.2466215
+Generating SRT to processed\10f45926-0cf0-436e-883f-18b7c7228df3_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\10f45926-0cf0-436e-883f-18b7c7228df3_short_1.srt)
+--- START PROCESSING e5b09416-4d0d-4ca8-a6e0-59e536f296b0 ---
+Audio extracted: processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0.mp3
+Starting transcription for processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 72.2257595-102.2257595
+Generating SRT to processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0_short_1.srt)
