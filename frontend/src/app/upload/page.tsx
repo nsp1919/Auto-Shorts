@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -15,12 +15,38 @@ import { Settings, Wand2 } from "lucide-react";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
+interface Clip {
+    path: string;
+    url: string;
+    reason: string;
+    start: number;
+    end: number;
+    title?: string;
+    description?: string;
+    hashtags?: string[];
+}
+
+interface ProcessPayload {
+    file_id?: string | null;
+    video_path?: string | null;
+    video_url?: string;
+    num_shorts: number;
+    caption_style: string;
+    language: string;
+    clip_duration: number;
+    processing_start_time?: number;
+    processing_end_time?: number;
+    custom_color?: string;
+    custom_bg_color?: string;
+    custom_size?: number;
+}
+
 export default function UploadPage() {
     const [file, setFile] = useState<File | null>(null);
     const [uploading, setUploading] = useState(false);
     const [processing, setProcessing] = useState(false);
     const [progress, setProgress] = useState(0);
-    const [clips, setClips] = useState<any[]>([]);
+    const [clips, setClips] = useState<Clip[]>([]);
     const [numShorts, setNumShorts] = useState<number>(4);
     const [captionStyle, setCaptionStyle] = useState<string>("Karaoke");
     const [language, setLanguage] = useState<string>("");
@@ -29,8 +55,8 @@ export default function UploadPage() {
     const [endTime, setEndTime] = useState<string>("");
 
     // Customization State
-    const [customizingClip, setCustomizingClip] = useState<any | null>(null);
-    const [sharingClip, setSharingClip] = useState<any | null>(null);
+    const [customizingClip, setCustomizingClip] = useState<Clip | null>(null);
+    const [sharingClip, setSharingClip] = useState<Clip | null>(null);
     const [sharePlatform, setSharePlatform] = useState<'instagram' | 'youtube' | null>(null);
     const [shareUsername, setShareUsername] = useState("");
     const [sharePassword, setSharePassword] = useState("");
@@ -111,7 +137,7 @@ export default function UploadPage() {
         setUploading(false);
         setProcessing(true);
 
-        const payload: any = {
+        const payload: ProcessPayload = {
             num_shorts: numShorts,
             caption_style: captionStyle,
             language: language,
@@ -219,13 +245,13 @@ export default function UploadPage() {
     };
 
 
-    const openCustomize = (clip: any) => {
+    const openCustomize = (clip: Clip) => {
         setCustomizingClip(clip);
         // Default to current global style or 'Karaoke'
         setRegenStyle(captionStyle);
     };
 
-    const openShare = (clip: any, platform: 'instagram' | 'youtube') => {
+    const openShare = (clip: Clip, platform: 'instagram' | 'youtube') => {
         setSharingClip(clip);
         setSharePlatform(platform);
     };
@@ -259,9 +285,13 @@ export default function UploadPage() {
             setSharingClip(null);
             setSharePassword(""); // Clear sensitive
 
-        } catch (e: any) {
+        } catch (e: unknown) {
             console.error(e);
-            alert(`Sharing Failed: ${e.message}`);
+            if (e instanceof Error) {
+                alert(`Sharing Failed: ${e.message}`);
+            } else {
+                alert(`Sharing Failed: Unknown error`);
+            }
         } finally {
             setSharingVideo(false);
         }
@@ -279,6 +309,7 @@ export default function UploadPage() {
             // We can extract it from the URL or Path.
             // URL: /static/file_id_short_1.mp4
             const filename = customizingClip.url.split('/').pop();
+            if (!filename) throw new Error("Invalid clip URL");
             // This is risky parsing. 
             // In process.py we return "original_file": request.file_id in the processing response.
             // But here we only have the clip object.
