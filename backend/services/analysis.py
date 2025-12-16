@@ -71,6 +71,75 @@ class ContentAnalyzer:
             print(f"Analysis error: {e}")
             return []
 
+    def generate_viral_content(self, video_context: str, clip_title: str = "", clip_reason: str = "") -> dict:
+        """
+        Generates viral captions, descriptions, and hashtags for social media sharing.
+        Uses Gemini AI to analyze video context and create engaging content.
+        
+        Returns:
+            dict: {
+                "title": str,  # Catchy viral title
+                "description": str,  # Engaging description with hook
+                "hashtags": list,  # List of trending hashtags
+                "caption_instagram": str,  # Instagram-optimized caption
+                "caption_youtube": str  # YouTube-optimized description
+            }
+        """
+        if not self.model:
+            # Fallback content if no API
+            return {
+                "title": clip_title or "Check this out! 🔥",
+                "description": "Amazing content you don't want to miss!",
+                "hashtags": ["#viral", "#trending", "#fyp", "#foryou", "#explore"],
+                "caption_instagram": f"{clip_title}\n\n#viral #trending #fyp #foryou #explore",
+                "caption_youtube": clip_title or "Check this out!"
+            }
+
+        prompt = f"""
+        Analyze this video clip context and generate viral social media content.
+        
+        Video Context/Transcript: {video_context[:2000]}
+        Clip Title Hint: {clip_title}
+        Why it's interesting: {clip_reason}
+        
+        Generate content optimized for MAXIMUM VIRALITY on Instagram and YouTube.
+        Return strictly valid JSON:
+        {{
+            "title": "<catchy 5-10 word viral title with emoji>",
+            "description": "<engaging 2-3 sentence description with hook and call-to-action>",
+            "hashtags": ["<hashtag1>", "<hashtag2>", ... 15 trending hashtags without # symbol],
+            "caption_instagram": "<full Instagram caption with emojis, line breaks, and hashtags at end>",
+            "caption_youtube": "<YouTube description with timestamps placeholder and call-to-action>"
+        }}
+        
+        Focus on:
+        - Curiosity-inducing hooks ("You won't believe...", "This changed everything...")
+        - Emotional triggers
+        - Trending hashtags for 2024/2025
+        - Platform-specific optimization
+        """
+
+        try:
+            response = self.model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+            content = response.text
+            result = json.loads(content)
+            
+            # Ensure hashtags have # prefix
+            if "hashtags" in result:
+                result["hashtags"] = [f"#{tag.lstrip('#')}" for tag in result["hashtags"]]
+            
+            return result
+
+        except Exception as e:
+            print(f"Viral content generation error: {e}")
+            return {
+                "title": clip_title or "Must Watch! 🔥",
+                "description": clip_reason or "You need to see this!",
+                "hashtags": ["#viral", "#trending", "#fyp", "#foryou", "#explore", "#mustwatch"],
+                "caption_instagram": f"{clip_title}\n\n#viral #trending #fyp",
+                "caption_youtube": clip_title or "Check this out!"
+            }
+
     def detect_high_energy_moments(self, video_path: str, num_clips: int = 4, clip_duration: int = 60) -> list:
         """
         Fallback: Selects interesting parts based on position (evenly distributed).

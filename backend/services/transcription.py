@@ -105,12 +105,43 @@ class Transcriber:
 
             return {
                 "text": " ".join(full_text),
-                "segments": formatted_segments
+                "segments": formatted_segments,
+                "detected_language": info.language
             }
 
         except Exception as e:
             print(f"Local Transcription error: {e}")
             raise
+
+    def transcribe_with_roman_telugu(self, audio_path: str, language: str = None) -> dict:
+        """
+        Transcribes audio and converts Telugu text to Roman Telugu for captions.
+        Use this for Instagram/YouTube style Telugu captions.
+        """
+        result = self.transcribe_audio(audio_path, language)
+        
+        # Check if Telugu was detected or specified
+        detected_lang = result.get("detected_language", language)
+        if detected_lang == "te" or language == "te":
+            from services.transliteration import transliterate_telugu_to_roman, process_transcript_for_roman_telugu
+            
+            # Convert full text
+            if "text" in result:
+                result["text"] = transliterate_telugu_to_roman(result["text"])
+            
+            # Convert segments
+            if "segments" in result:
+                for segment in result["segments"]:
+                    if "text" in segment:
+                        segment["text"] = transliterate_telugu_to_roman(segment["text"])
+                    if "words" in segment:
+                        for word in segment["words"]:
+                            if "word" in word:
+                                word["word"] = transliterate_telugu_to_roman(word["word"])
+            
+            result["roman_telugu"] = True
+        
+        return result
 
 
 transcriber = Transcriber()

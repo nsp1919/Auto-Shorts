@@ -23,6 +23,73 @@ class VideoProcessor:
         self.ffmpeg_path = self._get_binary_path("ffmpeg")
         print(f"VideoProcessor initialized. FFmpeg path: {self.ffmpeg_path}")
 
+    def add_watermark(self, video_path: str, output_path: str, 
+                      watermark_text: str = None, 
+                      watermark_image: str = None,
+                      font_size: int = 24,
+                      opacity: float = 0.8) -> str:
+        """
+        Adds a watermark to the video at bottom-right corner.
+        watermark_text: Text to overlay (e.g., "@YourChannel")
+        watermark_image: Path to PNG file for image watermark
+        Returns path to watermarked video.
+        """
+        video_path = Path(video_path)
+        output_path = Path(output_path)
+        
+        if watermark_text:
+            # Text watermark using drawtext filter
+            # Position: bottom-right with 20px padding
+            # Semi-transparent black background box
+            filter_str = (
+                f"drawtext=text='{watermark_text}':"
+                f"fontsize={font_size}:"
+                f"fontcolor=white@{opacity}:"
+                f"borderw=2:bordercolor=black@0.5:"
+                f"x=w-tw-20:y=h-th-20"
+            )
+            
+            command = [
+                self.ffmpeg_path, "-y",
+                "-i", str(video_path),
+                "-vf", filter_str,
+                "-c:a", "copy",
+                str(output_path)
+            ]
+            
+        elif watermark_image:
+            # PNG watermark using overlay filter
+            # Scale watermark to max 100px height, position bottom-right
+            watermark_image = Path(watermark_image)
+            if not watermark_image.exists():
+                raise FileNotFoundError(f"Watermark image not found: {watermark_image}")
+            
+            filter_str = (
+                f"[1:v]scale=-1:80[wm];"
+                f"[0:v][wm]overlay=W-w-20:H-h-20"
+            )
+            
+            command = [
+                self.ffmpeg_path, "-y",
+                "-i", str(video_path),
+                "-i", str(watermark_image),
+                "-filter_complex", filter_str,
+                "-c:a", "copy",
+                str(output_path)
+            ]
+        else:
+            # No watermark, just copy
+            shutil.copy(str(video_path), str(output_path))
+            return str(output_path)
+        
+        try:
+            print(f"Adding watermark: {' '.join(command)}")
+            subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            return str(output_path)
+        except subprocess.CalledProcessError as e:
+            print(f"Error adding watermark: {e}")
+            raise
+
     def _get_binary_path(self, binary_name: str) -> str:
         """
         Attempts to find the binary path.

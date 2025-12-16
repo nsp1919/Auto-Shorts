@@ -35,3 +35,33 @@ async def upload_video(file: UploadFile = File(...)):
         "saved_path": str(file_path),
         "message": "Upload successful"
     }
+
+WATERMARK_DIR = Path("uploads/watermarks")
+WATERMARK_DIR.mkdir(exist_ok=True, parents=True)
+
+@router.post("/watermark")
+async def upload_watermark(file: UploadFile = File(...)):
+    """
+    Upload a watermark image (PNG/JPG).
+    Returns the path to use in video processing.
+    """
+    if not file.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="File must be an image (PNG/JPG).")
+
+    # Generate unique ID
+    file_id = str(uuid.uuid4())
+    file_extension = Path(file.filename).suffix
+    saved_filename = f"watermark_{file_id}{file_extension}"
+    file_path = WATERMARK_DIR / saved_filename
+
+    try:
+        with file_path.open("wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Could not save watermark: {str(e)}")
+
+    return {
+        "watermark_path": str(file_path.absolute()),
+        "filename": file.filename,
+        "message": "Watermark uploaded successfully"
+    }

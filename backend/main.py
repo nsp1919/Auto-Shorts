@@ -24,8 +24,9 @@ app.add_middleware(
 # Include Routers
 app.include_router(upload.router, prefix="/api/upload", tags=["Upload"])
 app.include_router(process.router, prefix="/api/process", tags=["Process"])
-from api.routes import share
+from api.routes import share, rocket
 app.include_router(share.router, prefix="/api/share", tags=["Share"])
+app.include_router(rocket.router, prefix="/api/rocket", tags=["Rocket Share"])
 
 
 # Serve Processed Videos

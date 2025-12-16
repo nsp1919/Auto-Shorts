@@ -75,3 +75,268 @@ Processing Clip 0: 72.2257595-102.2257595
 Generating SRT to processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0_short_1.srt
 SRT generated. Exists? True
 Cutting video (Subtitles: processed\e5b09416-4d0d-4ca8-a6e0-59e536f296b0_short_1.srt)
+--- START PROCESSING 1b11e800-74fa-4317-a376-207895f36ce0 ---
+Audio extracted: processed\1b11e800-74fa-4317-a376-207895f36ce0.mp3
+Starting transcription for processed\1b11e800-74fa-4317-a376-207895f36ce0.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\1b11e800-74fa-4317-a376-207895f36ce0_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 72.2466215-102.2466215
+Generating SRT to processed\1b11e800-74fa-4317-a376-207895f36ce0_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\1b11e800-74fa-4317-a376-207895f36ce0_short_1.srt)
+--- START PROCESSING 73fb88bf-e111-4597-8a8a-3260379f1ae8 ---
+Audio extracted: processed\73fb88bf-e111-4597-8a8a-3260379f1ae8.mp3
+Starting transcription for processed\73fb88bf-e111-4597-8a8a-3260379f1ae8.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 22.8986486-82.8986486
+Generating SRT to processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_1.srt)
+Processing Clip 1: 45.7972972-105.7972972
+Generating SRT to processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_2.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_2.srt)
+Processing Clip 2: 68.6959458-128.6959458
+Generating SRT to processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_3.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_3.srt)
+Processing Clip 3: 91.5945944-151.5945944
+Generating SRT to processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_4.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\73fb88bf-e111-4597-8a8a-3260379f1ae8_short_4.srt)
+--- START PROCESSING 23400622-6b99-45cd-a84e-29c06d9ffdef ---
+Audio extracted: processed\23400622-6b99-45cd-a84e-29c06d9ffdef.mp3
+Starting transcription for processed\23400622-6b99-45cd-a84e-29c06d9ffdef.mp3 (Language: )
+Transcription result: 500 chars
+Segments count: 22
+Analyzing 500 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\23400622-6b99-45cd-a84e-29c06d9ffdef_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 14.6797278-74.6797278
+Generating SRT to processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_1.srt)
+Processing Clip 1: 29.3594556-89.3594556
+Generating SRT to processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_2.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_2.srt)
+Processing Clip 2: 44.0391834-104.0391834
+Generating SRT to processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_3.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_3.srt)
+Processing Clip 3: 58.7189112-118.71891120000001
+Generating SRT to processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_4.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\23400622-6b99-45cd-a84e-29c06d9ffdef_short_4.srt)
+--- START PROCESSING 254667e4-1020-4c1a-add6-fca5048babe5 ---
+Trimming source video: C:\Users\nsp19\Downloads\Auto Post\backend\uploads\254667e4-1020-4c1a-add6-fca5048babe5.mp4 (84.0-105.0)
+Trimmed video saved to: processed\254667e4-1020-4c1a-add6-fca5048babe5_trimmed.mp4
+Audio extracted: processed\254667e4-1020-4c1a-add6-fca5048babe5_trimmed.mp3
+Starting transcription for processed\254667e4-1020-4c1a-add6-fca5048babe5_trimmed.mp3 (Language: )
+Transcription result: 70 chars
+Segments count: 4
+Analyzing 70 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\254667e4-1020-4c1a-add6-fca5048babe5_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-21.021
+Generating SRT to processed\254667e4-1020-4c1a-add6-fca5048babe5_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\254667e4-1020-4c1a-add6-fca5048babe5_short_1.srt)
+--- START PROCESSING 7d325d68-67ec-4891-aaed-f639f2a16cf5 ---
+Audio extracted: processed\7d325d68-67ec-4891-aaed-f639f2a16cf5.mp3
+Starting transcription for processed\7d325d68-67ec-4891-aaed-f639f2a16cf5.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\7d325d68-67ec-4891-aaed-f639f2a16cf5_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 72.2466215-102.2466215
+Generating SRT to processed\7d325d68-67ec-4891-aaed-f639f2a16cf5_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\7d325d68-67ec-4891-aaed-f639f2a16cf5_short_1.srt)
+Watermark applied: processed\7d325d68-67ec-4891-aaed-f639f2a16cf5_short_1_wm.mp4
+--- START PROCESSING 60badf0b-9e14-4c18-b69e-e738872097a9 ---
+Trimming source video: C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\60badf0b-9e14-4c18-b69e-e738872097a9.mp4 (40.0-45.0)
+Trimmed video saved to: processed\60badf0b-9e14-4c18-b69e-e738872097a9_trimmed.mp4
+Audio extracted: processed\60badf0b-9e14-4c18-b69e-e738872097a9_trimmed.mp3
+Starting transcription for processed\60badf0b-9e14-4c18-b69e-e738872097a9_trimmed.mp3 (Language: )
+Transcription result: 25 chars
+Segments count: 1
+Analyzing 25 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\60badf0b-9e14-4c18-b69e-e738872097a9_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-5.004292
+Generating SRT to processed\60badf0b-9e14-4c18-b69e-e738872097a9_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\60badf0b-9e14-4c18-b69e-e738872097a9_short_1.srt)
+Watermark applied: processed\60badf0b-9e14-4c18-b69e-e738872097a9_short_1_wm.mp4
+--- START PROCESSING 852cd44d-de8f-4abf-9ed3-8e35298c571a ---
+Trimming source video: C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\852cd44d-de8f-4abf-9ed3-8e35298c571a.mp4 (40.0-64.0)
+Trimmed video saved to: processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_trimmed.mp4
+Audio extracted: processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_trimmed.mp3
+Starting transcription for processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_trimmed.mp3 (Language: )
+Transcription result: 114 chars
+Segments count: 4
+Analyzing 114 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-24.023292
+Generating SRT to processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_short_1.srt)
+Watermark applied: processed\852cd44d-de8f-4abf-9ed3-8e35298c571a_short_1_wm.mp4
+--- START PROCESSING 43b60e3d-a57c-4e61-bac0-b34e681eb78a ---
+Trimming source video: C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\43b60e3d-a57c-4e61-bac0-b34e681eb78a.mp4 (40.0-64.0)
+Trimmed video saved to: processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_trimmed.mp4
+Audio extracted: processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_trimmed.mp3
+Starting transcription for processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_trimmed.mp3 (Language: te)
+Using Roman Telugu transliteration for captions
+Transcription result: 185 chars
+Segments count: 3
+Analyzing 185 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-24.023292
+Generating SRT to processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_short_1.srt)
+Watermark applied: processed\43b60e3d-a57c-4e61-bac0-b34e681eb78a_short_1_wm.mp4
+--- START PROCESSING 16410aef-8587-438c-ab77-e34fbd89b7de ---
+Audio extracted: processed\16410aef-8587-438c-ab77-e34fbd89b7de.mp3
+Starting transcription for processed\16410aef-8587-438c-ab77-e34fbd89b7de.mp3 (Language: )
+Transcription result: 71 chars
+Segments count: 4
+Analyzing 71 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\16410aef-8587-438c-ab77-e34fbd89b7de_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-21.021
+Generating SRT to processed\16410aef-8587-438c-ab77-e34fbd89b7de_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\16410aef-8587-438c-ab77-e34fbd89b7de_short_1.srt)
+--- START PROCESSING 84e65dc8-95dc-4970-ad55-27ee2b05dcca ---
+Trimming source video: uploads\84e65dc8-95dc-4970-ad55-27ee2b05dcca.mp4 (40.0-64.0)
+Trimmed video saved to: processed\84e65dc8-95dc-4970-ad55-27ee2b05dcca_trimmed.mp4
+Audio extraction failed: Command '['C:\\Users\\nsp19\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffmpeg.EXE', '-i', 'processed\\84e65dc8-95dc-4970-ad55-27ee2b05dcca_trimmed.mp4', '-q:a', '0', '-map', 'a', 'processed\\84e65dc8-95dc-4970-ad55-27ee2b05dcca_trimmed.mp3', '-y']' returned non-zero exit status 4294967274.
+--- START PROCESSING c6b37deb-0663-4dde-991a-e9789494fa8c ---
+Trimming source video: uploads\c6b37deb-0663-4dde-991a-e9789494fa8c.mp4 (40.0-64.0)
+Trimmed video saved to: processed\c6b37deb-0663-4dde-991a-e9789494fa8c_trimmed.mp4
+Audio extracted: processed\c6b37deb-0663-4dde-991a-e9789494fa8c_trimmed.mp3
+Starting transcription for processed\c6b37deb-0663-4dde-991a-e9789494fa8c_trimmed.mp3 (Language: )
+Transcription result: 72 chars
+Segments count: 4
+Analyzing 72 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\c6b37deb-0663-4dde-991a-e9789494fa8c_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-20.019292
+Generating SRT to processed\c6b37deb-0663-4dde-991a-e9789494fa8c_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\c6b37deb-0663-4dde-991a-e9789494fa8c_short_1.srt)
+Watermark applied: processed\c6b37deb-0663-4dde-991a-e9789494fa8c_short_1_wm.mp4
+--- START PROCESSING 135a9d76-a938-4cbc-85a6-f6c2febca30a ---
+Trimming source video: uploads\135a9d76-a938-4cbc-85a6-f6c2febca30a.mp4 (40.0-64.0)
+Trimmed video saved to: processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_trimmed.mp4
+Audio extracted: processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_trimmed.mp3
+Starting transcription for processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_trimmed.mp3 (Language: )
+Transcription result: 95 chars
+Segments count: 2
+Analyzing 95 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-24.023292
+Generating SRT to processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_short_1.srt)
+Watermark settings: text=None, image=C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\watermarks\watermark_8408dd95-1b64-4d2b-9bc1-4e460e4f6111.png
+Watermark image exists: C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\watermarks\watermark_8408dd95-1b64-4d2b-9bc1-4e460e4f6111.png
+Watermark applied successfully: processed\135a9d76-a938-4cbc-85a6-f6c2febca30a_short_1_wm.mp4
+--- START PROCESSING c82464f1-5b3b-43d8-8ec2-f0488e28f50e ---
+Trimming source video: uploads\c82464f1-5b3b-43d8-8ec2-f0488e28f50e.mp4 (40.0-50.0)
+Trimmed video saved to: processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_trimmed.mp4
+Audio extracted: processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_trimmed.mp3
+Starting transcription for processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_trimmed.mp3 (Language: )
+Transcription result: 14 chars
+Segments count: 1
+Analyzing 14 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-10.009292
+Generating SRT to processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_short_1.srt)
+Watermark settings: text=Viarl_veva, image=None
+Watermark applied successfully: processed\c82464f1-5b3b-43d8-8ec2-f0488e28f50e_short_1_wm.mp4
+--- START PROCESSING 0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d ---
+Trimming source video: uploads\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d.mp4 (40.0-50.0)
+Trimmed video saved to: processed\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d_trimmed.mp4
+Audio extracted: processed\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d_trimmed.mp3
+Starting transcription for processed\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d_trimmed.mp3 (Language: )
+Transcription result: 14 chars
+Segments count: 1
+Analyzing 14 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-10.009292
+Generating SRT to processed\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\0d3b6e15-ae52-4cf3-b1ed-1a34d1deab8d_short_1.srt)
+Error processing clip 0: 'ProcessRequest' object has no attribute 'watermark_text'
+--- START PROCESSING 7df89a26-03fe-46ef-927e-3ad04132abdb ---
+Audio extracted: processed\7df89a26-03fe-46ef-927e-3ad04132abdb.mp3
+Starting transcription for processed\7df89a26-03fe-46ef-927e-3ad04132abdb.mp3 (Language: )
+Transcription result: 640 chars
+Segments count: 24
+Analyzing 640 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\7df89a26-03fe-46ef-927e-3ad04132abdb_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 72.2466215-102.2466215
+Generating SRT to processed\7df89a26-03fe-46ef-927e-3ad04132abdb_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\7df89a26-03fe-46ef-927e-3ad04132abdb_short_1.srt)
+--- START PROCESSING fa63927f-ea38-446b-9dc5-5c893a0418bd ---
+Trimming source video: C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\fa63927f-ea38-446b-9dc5-5c893a0418bd.mp4 (40.0-50.0)
+Trimmed video saved to: processed\fa63927f-ea38-446b-9dc5-5c893a0418bd_trimmed.mp4
+Audio extracted: processed\fa63927f-ea38-446b-9dc5-5c893a0418bd_trimmed.mp3
+Starting transcription for processed\fa63927f-ea38-446b-9dc5-5c893a0418bd_trimmed.mp3 (Language: )
+Transcription result: 43 chars
+Segments count: 1
+Analyzing 43 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\fa63927f-ea38-446b-9dc5-5c893a0418bd_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-10.009292
+Generating SRT to processed\fa63927f-ea38-446b-9dc5-5c893a0418bd_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\fa63927f-ea38-446b-9dc5-5c893a0418bd_short_1.srt)
+--- START PROCESSING 57f58592-7e0e-4b79-82b8-76f5a8ed01b0 ---
+Audio extracted: processed\57f58592-7e0e-4b79-82b8-76f5a8ed01b0.mp3
+Starting transcription for processed\57f58592-7e0e-4b79-82b8-76f5a8ed01b0.mp3 (Language: )
+Transcription result: 0 chars
+Transcription returned empty text.
+Transcription failed entirely: Transcription returned empty text.
+Analyzing 0 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\57f58592-7e0e-4b79-82b8-76f5a8ed01b0_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-24.983265
+Cutting video (Subtitles: None)
