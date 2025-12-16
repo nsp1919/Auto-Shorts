@@ -340,3 +340,33 @@ Transcript saved to processed\57f58592-7e0e-4b79-82b8-76f5a8ed01b0_transcript.js
 Using heuristic fallback.
 Processing Clip 0: 0-24.983265
 Cutting video (Subtitles: None)
+--- START PROCESSING 2c122755-ad56-401d-b2e9-c5e6c2988672 ---
+Trimming source video: uploads\2c122755-ad56-401d-b2e9-c5e6c2988672.mp4 (40.0-50.0)
+Trimmed video saved to: processed\2c122755-ad56-401d-b2e9-c5e6c2988672_trimmed.mp4
+Audio extracted: processed\2c122755-ad56-401d-b2e9-c5e6c2988672_trimmed.mp3
+Starting transcription for processed\2c122755-ad56-401d-b2e9-c5e6c2988672_trimmed.mp3 (Language: )
+Transcription result: 14 chars
+Segments count: 1
+Analyzing 14 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\2c122755-ad56-401d-b2e9-c5e6c2988672_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-10.009292
+Generating SRT to processed\2c122755-ad56-401d-b2e9-c5e6c2988672_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\2c122755-ad56-401d-b2e9-c5e6c2988672_short_1.srt)
+--- START PROCESSING f407441f-27a4-4a1b-82d1-69cfb622a595 ---
+Trimming source video: C:\Users\nsp19\Downloads\Projects\Auto Post\backend\uploads\f407441f-27a4-4a1b-82d1-69cfb622a595.mp4 (40.0-50.0)
+Trimmed video saved to: processed\f407441f-27a4-4a1b-82d1-69cfb622a595_trimmed.mp4
+Audio extracted: processed\f407441f-27a4-4a1b-82d1-69cfb622a595_trimmed.mp3
+Starting transcription for processed\f407441f-27a4-4a1b-82d1-69cfb622a595_trimmed.mp3 (Language: )
+Transcription result: 43 chars
+Segments count: 1
+Analyzing 43 chars with LLM...
+LLM returned 0 moments.
+Transcript saved to processed\f407441f-27a4-4a1b-82d1-69cfb622a595_transcript.json
+Using heuristic fallback.
+Processing Clip 0: 0-10.009292
+Generating SRT to processed\f407441f-27a4-4a1b-82d1-69cfb622a595_short_1.srt
+SRT generated. Exists? True
+Cutting video (Subtitles: processed\f407441f-27a4-4a1b-82d1-69cfb622a595_short_1.srt)
