@@ -1,9 +1,9 @@
 # Auto Shorts Maker - Backend Dependencies
 # For Render Deployment (Cloud Mode - uses OpenAI API)
 
-# Core Framework - minimal dependencies
-fastapi==0.104.1
-uvicorn==0.24.0
+# Core Framework - use older FastAPI compatible with pydantic v1
+fastapi==0.99.1
+uvicorn==0.23.2
 python-multipart==0.0.6
 
 # AI/ML - OpenAI API for transcription
@@ -15,5 +15,5 @@ yt-dlp==2023.11.16
 # Utilities
 python-dotenv==1.0.0
 
-# Use pydantic v1 to avoid Rust compilation issues
+# Pydantic v1 (pure Python, no Rust needed)
 pydantic==1.10.13
