@@ -269,6 +269,7 @@ export default function UploadPage() {
         setRegenStyle(captionStyle);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const openShare = (clip: Clip, platform: 'instagram' | 'youtube') => {
         setSharingClip(clip);
         setSharePlatform(platform);
