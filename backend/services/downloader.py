@@ -23,6 +23,12 @@ class VideoDownloader:
             'noplaylist': True,
             'ffmpeg_location': video_processor.ffmpeg_path,
             'updatetime': False, # Prevent file locking issues on Windows
+            'force_ipv4': True, # Force IPv4 to avoid cloud IPv6 issues
+            'nocheckcertificate': True, # Avoid SSL errors
+            'ignoreerrors': True,
+            'quiet': True,
+            'no_warnings': True,
+
         }
 
         try:
