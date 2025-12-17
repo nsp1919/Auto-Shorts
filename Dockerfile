@@ -2,31 +2,31 @@ FROM python:3.10
 
 # Install system dependencies
 # Added ca-certificates and curl/wget for robust networking
+# Added iputils-ping and dnsutils for debugging
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     git \
     ca-certificates \
     curl \
+    iputils-ping \
+    dnsutils \
     && rm -rf /var/lib/apt/lists/*
 
-# Setup user for Hugging Face Spaces
-RUN useradd -m -u 1000 user
-USER user
-ENV HOME=/home/user \
-    PATH=/home/user/.local/bin:$PATH
+# Run as root (default) to fix permissions issues in HF Spaces
+# Removed user creation and switching
 
 # Working directory
-WORKDIR $HOME/app
+WORKDIR /app
 
-# Copy requirements
-COPY --chown=user backend/requirements.txt .
+# Copy requirements (adjusting path if needed, assuming backend/requirements.txt exists)
+COPY backend/requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
-COPY --chown=user backend/ .
+COPY backend/ .
 
 # Create directories
 RUN mkdir -p uploads processed && \
