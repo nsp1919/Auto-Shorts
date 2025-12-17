@@ -14,6 +14,8 @@ origins = [
     # Production URLs - Update these after deployment
     "https://*.vercel.app",  # Vercel deployments
     "https://autoshorts.vercel.app",  # Main Vercel domain (update as needed)
+    "https://auto-shorts-mauve.vercel.app", # User's specific Vercel deployment
+
 ]
 
 # Allow all origins in production for flexibility (can be restricted later)

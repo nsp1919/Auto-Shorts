@@ -8,7 +8,7 @@ router = APIRouter()
 UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
 
-@router.post("/")
+@router.post("")
 async def upload_video(file: UploadFile = File(...)):
     """
     Upload a video file to the server.

@@ -26,7 +26,7 @@ class ProcessRequest(BaseModel):
     custom_bg_color: str = None # Expected format: #RRGGBB
     custom_size: int = None
 
-@router.post("/")
+@router.post("")
 async def process_video(request: ProcessRequest):
     """
     Trigger full video processing pipeline:
