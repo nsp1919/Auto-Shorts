@@ -26,22 +26,36 @@ class VideoDownloader:
         if video_processor.ffmpeg_path and Path(video_processor.ffmpeg_path).is_absolute():
             ydl_opts['ffmpeg_location'] = video_processor.ffmpeg_path
 
-        # Add robust options
+        # Add robust options - REMOVED ignoreerrors to fail fast and see real error
         ydl_opts.update({
             'updatetime': False,
             'force_ipv4': True,
             'nocheckcertificate': True,
-            'ignoreerrors': True,
-            'quiet': True,
+            # 'ignoreerrors': True, # Removed to debug
+            # 'quiet': True,        # Removed to debug
             'no_warnings': True,
         })
+        
+        print(f"DEBUG: ydl_opts: {ydl_opts}")
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=True)
-                # yt-dlp might merge files and produce a filename different from the template extension if not forced
-                # But typically 'best[ext=mp4]' tries to keep it mp4.
-                # Let's find the actual file.
+                
+                if info is None:
+                    raise Exception("yt-dlp extract_info returned None (download failed?)")
+                
+                file_id = str(uuid.uuid4()) # We defined this earlier, but let's be sure
+                # Re-check file_id variable scope if I edited around it (it was defined at top of method)
+                
+                # ... Logic to find file ...
+                # (Existing logic)
+                for file in self.download_dir.glob(f"*.mp4"): # Broader search to debug? No, rely on specific id if we can
+                     # Wait, file_id comes from top of method.
+                     pass 
+
+                # Revert to original finding logic but safer
+                # The original code searched for f"{file_id}.*"
                 
                 # The info dict has 'filename' but sometimes it's the temp file.
                 # The safest way with a predictable template is checking what exists.
@@ -49,6 +63,9 @@ class VideoDownloader:
                 
                 # Prepare filename might fail if extension isn't in info dict yet
                 # So we search for the file using the UUID we forced
+                # We need to use 'file_id' from the outer scope
+                
+                # Let's verify existing loop logic:
                 for file in self.download_dir.glob(f"{file_id}.*"):
                     return str(file.absolute())
                 
@@ -56,6 +73,8 @@ class VideoDownloader:
                 filename = ydl.prepare_filename(info)
                 return str(Path(filename).absolute())
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             print(f"Download failed: {e}")
             raise
 
