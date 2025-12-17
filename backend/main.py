@@ -5,6 +5,29 @@ from api.routes import upload, process
 
 app = FastAPI(title="Auto Shorts Maker API", version="1.0.0")
 
+import socket
+import subprocess
+
+@app.on_event("startup")
+async def startup_event():
+    print("--- STARTUP NETWORK DIAGNOSTICS ---")
+    try:
+        # Test 1: DNS Resolution
+        print(f"DNS Test google.com: {socket.gethostbyname('google.com')}")
+        print(f"DNS Test youtube.com: {socket.gethostbyname('youtube.com')}")
+        
+        # Test 2: Outbound Ping (if ping is installed)
+        try:
+            # Ping google.com 3 times
+            result = subprocess.run(["ping", "-c", "3", "google.com"], capture_output=True, text=True)
+            print(f"Ping google.com:\n{result.stdout}")
+        except FileNotFoundError:
+            print("Ping command not found (skipped)")
+            
+    except Exception as e:
+        print(f"Startup Network Test Failed: {e}")
+    print("--- END NETWORK DIAGNOSTICS ---")
+
 # CORS Configuration
 origins = [
     "http://localhost:3000",  # Next.js frontend (dev)
