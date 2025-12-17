@@ -21,6 +21,8 @@ class VideoDownloader:
             'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
             'outtmpl': output_template,
             'noplaylist': True,
+        }
+
         if video_processor.ffmpeg_path and Path(video_processor.ffmpeg_path).is_absolute():
             ydl_opts['ffmpeg_location'] = video_processor.ffmpeg_path
 
@@ -33,8 +35,6 @@ class VideoDownloader:
             'quiet': True,
             'no_warnings': True,
         })
-
-        }
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
