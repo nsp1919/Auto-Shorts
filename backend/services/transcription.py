@@ -22,15 +22,19 @@ class Transcriber:
         self.local_model = None
 
     def _get_local_model(self):
+        # Prevent local model loading on Render to save memory
+        if os.getenv("RENDER"):
+             raise RuntimeError("Local Whisper model is disabled on Render to prevent memory crashes. Please set OPENAI_API_KEY.")
+
         if not FASTER_WHISPER_AVAILABLE:
             raise RuntimeError("faster-whisper is not installed. Please use OpenAI API or install faster-whisper locally.")
         if not self.local_model:
             print("Loading local Whisper model (tiny)... This may take a moment.")
             # 'tiny' is fast and small. 'base' is better but larger.
             # Using 'int8' quantization for speed on CPU.
-            # Upgraded to 'small' for better multi-language support (e.g. Telugu)
-            self.local_model = WhisperModel("small", device="cpu", compute_type="int8")
+            self.local_model = WhisperModel("tiny", device="cpu", compute_type="int8")
         return self.local_model
+
 
     def transcribe_audio(self, audio_path: str, language: str = None) -> dict:
         """
