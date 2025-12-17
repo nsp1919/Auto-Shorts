@@ -12,6 +12,8 @@ google-generativeai
 
 # Video Processing
 yt-dlp
+faster-whisper
+
 
 # Social Media (optional - comment out if causing issues)
 # instagrapi
