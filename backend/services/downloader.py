@@ -66,11 +66,13 @@ class VideoDownloader:
 
         attempts = [
             {"name": "Standard", "opts": {**base_opts}},
-            # Fix: Explicitly use Google DNS servers to bypass broken system resolver
-            {"name": "Google DNS", "opts": {**base_opts, 'dns_servers': ['8.8.8.8', '8.8.4.4'], 'force_ipv4': True}}, 
+            # Fix: Use DNS over HTTPS (DoH) - Best for restricting environments
+            {"name": "Google DoH", "opts": {**base_opts, 'doh_url': 'https://dns.google/dns-query', 'force_ipv4': True}}, 
+            # Fallback to Cloudflare DoH
+            {"name": "Cloudflare DoH", "opts": {**base_opts, 'doh_url': 'https://cloudflare-dns.com/dns-query', 'force_ipv4': True}},
             
-            # Alternative: Force IPv4 Only
-            {"name": "Force IPv4", "opts": {**base_opts, 'force_ipv4': True}},
+            # Explicit DNS servers (UDP 53)
+            {"name": "Google DNS", "opts": {**base_opts, 'dns_servers': ['8.8.8.8', '8.8.4.4'], 'force_ipv4': True}}, 
         ]
         
         # NOTE: 'dns_servers' is supported by yt-dlp to override socket.getaddrinfo behavior internally
