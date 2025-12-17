@@ -6,12 +6,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Try to import faster-whisper, but make it optional for cloud deployment
-try:
-    from faster_whisper import WhisperModel
-    FASTER_WHISPER_AVAILABLE = True
-except ImportError:
-    FASTER_WHISPER_AVAILABLE = False
-    print("faster-whisper not available. Using OpenAI API only for transcription.")
+# On Render, we skip this import entirely to save memory (loading libraries takes RAM)
+FASTER_WHISPER_AVAILABLE = False
+if not os.getenv("RENDER"):
+    try:
+        from faster_whisper import WhisperModel
+        FASTER_WHISPER_AVAILABLE = True
+    except ImportError:
+        FASTER_WHISPER_AVAILABLE = False
+        print("faster-whisper not available. Using OpenAI API only for transcription.")
+
 
 class Transcriber:
     def __init__(self):
