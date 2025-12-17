@@ -30,7 +30,10 @@ class VideoDownloader:
         ydl_opts.update({
             'updatetime': False,
             'force_ipv4': True,
+            'source_address': '0.0.0.0', # Bind to IPv4 interface
             'nocheckcertificate': True,
+            'socket_timeout': 15,
+            'retries': 10,
             # 'ignoreerrors': True, # Removed to debug
             # 'quiet': True,        # Removed to debug
             'no_warnings': True,
