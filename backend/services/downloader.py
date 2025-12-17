@@ -45,19 +45,31 @@ class VideoDownloader:
         import yt_dlp.version
         print(f"DEBUG: yt-dlp version: {yt_dlp.version.__version__}")
 
-        # Attempt 1: Force IPv4 (Common Fix)
-        # Attempt 2: Allow IPv6 (Fallback if IPv4 unavailable)
+        # DEBUG: Test DNS resolution before yt-dlp
+        import socket
+        try:
+            print(f"DEBUG: DNS Test google.com: {socket.gethostbyname('google.com')}")
+            print(f"DEBUG: DNS Test youtube.com: {socket.gethostbyname('youtube.com')}")
+        except Exception as e:
+            print(f"DEBUG: DNS Test failed: {e}")
+
+        # Strategy Order:
+        # 1. Standard (Let system/yt-dlp decide, usually best for Docker)
+        # 2. Force IPv4 (Fixes some IPv6-only network issues)
+        # 3. User Agent Spoofing (Fixes some bot blocking)
+        
+        base_opts = ydl_opts.copy()
+        if 'source_address' in base_opts:
+            del base_opts['source_address']
+        if 'force_ipv4' in base_opts:
+            del base_opts['force_ipv4']
+
         attempts = [
-            {"name": "Force IPv4", "opts": {**ydl_opts, 'force_ipv4': True, 'source_address': '0.0.0.0'}},
-            {"name": "Standard/IPv6", "opts": {**ydl_opts, 'force_ipv4': False}} # Remove source_address
+            {"name": "Standard", "opts": {**base_opts}},
+            {"name": "Force IPv4", "opts": {**base_opts, 'force_ipv4': True}},
+            {"name": "Force IPv4 + Bind", "opts": {**base_opts, 'force_ipv4': True, 'source_address': '0.0.0.0'}},
         ]
         
-        # Clean up source_address from second attempt if it leaked from ydl_opts copy (it didn't, we used **ydl_opts)
-        # But wait, ydl_opts has source_address from my previous edit? 
-        # I should clean the base ydl_opts first.
-        if 'source_address' in attempts[1]['opts']:
-            del attempts[1]['opts']['source_address']
-
         last_error = None
 
         for attempt in attempts:
@@ -69,17 +81,13 @@ class VideoDownloader:
                     if info is None:
                         raise Exception("yt-dlp extract_info returned None")
                     
-                    # Success! Find file
-                    file_id = str(uuid.uuid4()) # Only needed if we didn't define it outside loop?
-                    # logic relies on the file_id defined at start of method.
-                    # We generated file_id at line 16. It is constant for this call.
-                    
-                    # Check for file matching the UUID
-                    # Since we set 'outtmpl' with the ID, it should be there.
+                    # Success!
+                    # Find extracted file
+                    # We look for files matching the ID because extensions vary (mp4, mkv, webm)
                     for file in self.download_dir.glob(f"{file_id}.*"):
                         return str(file.absolute())
                     
-                    # Fallback
+                    # Fallback if file not found by glob (shouldnt happen with outtmpl)
                     filename = ydl.prepare_filename(info)
                     return str(Path(filename).absolute())
                     
