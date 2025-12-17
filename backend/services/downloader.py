@@ -21,13 +21,18 @@ class VideoDownloader:
             'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
             'outtmpl': output_template,
             'noplaylist': True,
-            'ffmpeg_location': video_processor.ffmpeg_path,
-            'updatetime': False, # Prevent file locking issues on Windows
-            'force_ipv4': True, # Force IPv4 to avoid cloud IPv6 issues
-            'nocheckcertificate': True, # Avoid SSL errors
+        if video_processor.ffmpeg_path and Path(video_processor.ffmpeg_path).is_absolute():
+            ydl_opts['ffmpeg_location'] = video_processor.ffmpeg_path
+
+        # Add robust options
+        ydl_opts.update({
+            'updatetime': False,
+            'force_ipv4': True,
+            'nocheckcertificate': True,
             'ignoreerrors': True,
             'quiet': True,
             'no_warnings': True,
+        })
 
         }
 
