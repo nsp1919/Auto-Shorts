@@ -13,6 +13,7 @@ google-generativeai
 # Video Processing
 yt-dlp>=2024.11.04
 faster-whisper
+requests
 
 
 # Social Media (optional - comment out if causing issues)

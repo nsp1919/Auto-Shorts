@@ -10,13 +10,45 @@ class VideoDownloader:
 
     def download_video(self, url: str) -> str:
         """
-        Downloads a video from a URL (YouTube, generic) using yt-dlp.
+        Downloads a video from a URL (YouTube, generic).
+        Checks for DOWNLOADER_API_URL env var. 
+        If present, calls remote microservice.
+        If not, falls back to local yt-dlp.
         Returns the absolute path to the downloaded file.
         """
+        import os
+        import requests
+        import shutil
+
         file_id = str(uuid.uuid4())
         # Template: uploads/UUID.mp4
         output_template = str(self.download_dir / f"{file_id}.%(ext)s")
+        local_filename = str(self.download_dir / f"{file_id}.mp4")
 
+        # 1. Remote Downloader Strategy
+        remote_api = os.getenv("DOWNLOADER_API_URL")
+        if remote_api:
+            print(f"DEBUG: Using remote downloader at {remote_api}")
+            try:
+                # Ensure URL ends with /download if not provided
+                endpoint = remote_api if remote_api.endswith("/download") else f"{remote_api.rstrip('/')}/download"
+                
+                with requests.get(endpoint, params={"url": url}, stream=True, timeout=600) as r:
+                    r.raise_for_status()
+                    # Determine extension from headers if possible, or default to mp4
+                    # For now, just save as mp4 since we requested mp4/best
+                    with open(local_filename, 'wb') as f:
+                        for chunk in r.iter_content(chunk_size=8192): 
+                            f.write(chunk)
+                
+                print(f"DEBUG: Remote download successful: {local_filename}")
+                return str(Path(local_filename).absolute())
+            except Exception as e:
+                print(f"ERROR: Remote download failed: {e}")
+                print("Falling back to local download...")
+                # Fallthrough to local strategies
+        
+        # 2. Local Strategies (Original Logic)
         ydl_opts = {
             'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
             'outtmpl': output_template,
