@@ -1,10 +1,14 @@
-FROM python:3.10-slim
+FROM python:3.10
 
 # Install system dependencies
+# Added ca-certificates and curl/wget for robust networking
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     git \
+    ca-certificates \
+    curl \
     && rm -rf /var/lib/apt/lists/*
+&& rm -rf /var/lib/apt/lists/*
 
 # Setup user for Hugging Face Spaces
 RUN useradd -m -u 1000 user
